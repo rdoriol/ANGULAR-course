@@ -1,0 +1,28 @@
+
+#counter {
+  margin: 0 auto;
+  margin-top: 50px;
+  display: flex;
+  border-radius: 7px;
+  width: fit-content;
+  background-color: #FF9800;
+}
+
+button {
+  color: #272B33;
+  padding: 10px;
+  margin: 5px 15px;
+  background-color:#000000;
+  border: none;
+  border-radius: 5px;
+  color: #F5F5F5;
+  transition: 0.3s;
+}
+
+button:hover {
+  cursor: pointer;
+  /* box-shadow: 2px 2px 2px #272B33; */
+  background-color: #272B33;
+
+
+}

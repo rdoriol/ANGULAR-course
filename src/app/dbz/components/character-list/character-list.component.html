@@ -1,0 +1,23 @@
+<ul class="list-group" >
+            <!-- EXTENDIENDO *ngFor funcionalidades extras de angular (index, first, last...) -->
+  <li class="list-group-item d-flex justify-content-between align-items-center"
+    *ngFor="let item of characterListChild;
+      let i = index;
+      let f = first;
+      let l = last;
+      let e = even;
+      let o = odd;"
+    [ngClass] = "{ 'list-group-item-primary': o, 'list-group-item-success': e }"
+  >
+
+  <div>
+    <strong class="text-primary">{{ i + 1 }}. </strong>
+    <span>{{ item.name }} - </span>
+    <strong>Power</strong>: <span>{{ item.power }}</span>
+  </div>
+
+  <button class="btn btn-danger" (click)="deleteCharacter(i)">X</button>
+
+  </li>
+
+</ul>

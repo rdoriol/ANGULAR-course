@@ -1,0 +1,19 @@
+<h3>Heroes list</h3>
+                            <!-- todo->    --- DIRECTIVA *ngFor ---    -->
+<ul class="mt-2 list-group" *ngFor="let item of heroesList let y = index">  <!-- opcional: "let y = index" -->
+  <li class="list-group-item"> {{y + 1}}. {{item}}</li>
+</ul>
+
+<button class="btn btn-danger mt-3 mx-2" (click)="delLastHero()">
+  Delete Last Hero
+</button>
+
+<button class="btn btn-success mt-3" (click)="resetListHeroes()">
+  Reset List
+</button>
+
+<h3 class="mt-5" *ngIf="delHero; else showNoName">Deleted Hero <small class="text-danger">{{delHero}}</small></h3>
+
+<ng-template #showNoName>
+  <h3 class="mt-5">Deleted Hero <small class="text-danger">You don´t has deleted to none hero</small></h3>
+</ng-template>

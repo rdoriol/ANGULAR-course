@@ -13,17 +13,18 @@ export class CharacterListComponent {
   @Input()
   public characterListChild: Character[] = [
     {
+      id: "",
       name: "",
       power: 0
   }]
 
     // Decorador que creará evento para emitir del hijo al padre
   @Output()
-  public deleteCharacterList:EventEmitter<number> = new EventEmitter();
+  public deleteCharacterList:EventEmitter<string> = new EventEmitter();
 
-  public deleteCharacter(index:number) {
+  public deleteCharacter(id:string) {
       // Se utiliza propiedad instanciada para emitir evento al exterior (padre)
-    this.deleteCharacterList.emit(index);
+    this.deleteCharacterList.emit(id);
   }
 
 

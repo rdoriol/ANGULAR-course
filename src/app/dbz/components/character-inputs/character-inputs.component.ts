@@ -1,8 +1,7 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 
 import { Character } from '../../interfaces/characters.interface';
-
-
+import { v4 as uuidv4 } from 'uuid';
 
 @Component({
   selector: 'app-dbz-character-inputs',
@@ -16,12 +15,13 @@ export class CharacterInputsComponent {
   public onNewCharacter: EventEmitter<Character> = new EventEmitter;
 
   public character: Character = {
+    id: uuidv4(),
     name:  "",
     power: 0
   }
     // Método que se lanzará en el submit del form
   public emitCharacter(): void {
-    console.log(this.character.name + "\n" + this.character.power);
+    console.log(this.character.id + "\n" + this.character.name + "\n" + this.character.power);
 
     //debugger; breakpoints
 
